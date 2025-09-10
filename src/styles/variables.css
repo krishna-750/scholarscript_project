@@ -1,0 +1,30 @@
+:root {
+    --bg: #f7fbf9;
+    --primary: #114b3b;
+    /* deep green for buttons/accents */
+    --accent: #1eb77c;
+    /* bright accent green */
+    --muted: #6b7280;
+    /* gray for text */
+    --card: #ffffff;
+    --max-width: 1200px;
+}
+
+* {
+    box-sizing: border-box
+}
+
+body {
+    margin: 0;
+    font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    background: var(--bg);
+    color: #0f172a;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+    width: 90%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
