@@ -10,6 +10,8 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Testimonials from "./pages/Testimonials";
 import Blog from "./pages/Blog";
+import FloatingContactForm from './components/FloatingContactForm';
+
 
 export default function App() {
   return (
@@ -27,6 +29,7 @@ export default function App() {
 
         </Routes>
       </main>
+      <FloatingContactForm />
       <Footer />
       <WhatsAppButton />
     </>

@@ -1,17 +1,18 @@
+/* ================== Global / Mobile-First Improvements ================== */
+
+/* Variables remain the same */
 :root {
     --bg: #f7fbf9;
     --primary: #114b3b;
-    /* deep green for buttons/accents */
     --accent: #1eb77c;
-    /* bright accent green */
     --muted: #6b7280;
-    /* gray for text */
     --card: #ffffff;
     --max-width: 1200px;
 }
 
+/* Box sizing & body defaults */
 * {
-    box-sizing: border-box
+    box-sizing: border-box;
 }
 
 body {
@@ -21,10 +22,89 @@ body {
     color: #0f172a;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    line-height: 1.5;
 }
 
+/* Container adjustments */
 .container {
     width: 90%;
     max-width: var(--max-width);
     margin: 0 auto;
+    padding: 0 4%;
+}
+
+/* ================== Mobile Font Scaling ================== */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    line-height: 1.2;
+}
+
+p,
+li,
+a,
+span {
+    font-size: 0.95rem;
+    /* readable on small screens */
+}
+
+@media screen and (min-width: 600px) {
+
+    p,
+    li,
+    a,
+    span {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (min-width: 900px) {
+
+    p,
+    li,
+    a,
+    span {
+        font-size: 1.05rem;
+    }
+}
+
+/* ================== Images & Media ================== */
+img,
+video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ================== Utility Classes ================== */
+.text-center {
+    text-align: center;
+}
+
+.mt-10 {
+    margin-top: 10px;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+
+.mb-10 {
+    margin-bottom: 10px;
+}
+
+.mb-20 {
+    margin-bottom: 20px;
+}
+
+/* ================== Responsive Containers ================== */
+@media screen and (max-width: 600px) {
+    .container {
+        width: 95%;
+        padding: 0 2%;
+    }
 }
