@@ -104,7 +104,6 @@
 //     );
 // }
 
-
 import React, { useState, useEffect, useRef } from "react";
 import "./FloatingContactForm.css";
 
@@ -116,7 +115,7 @@ export default function FloatingContactForm() {
 
     // Show form every 10 seconds
     useEffect(() => {
-        const interval = setInterval(() => setOpen(true), 10000);
+        const interval = setInterval(() => setOpen(true), 30000);
         return () => clearInterval(interval);
     }, []);
 
@@ -133,7 +132,10 @@ export default function FloatingContactForm() {
 
     const onSubmit = (e, method) => {
         e.preventDefault();
-        const fd = new FormData(e.target);
+
+        // ✅ use formRef.current instead of e.target
+        const fd = new FormData(formRef.current);
+
         const name = fd.get("name") || "No name";
         const email = fd.get("email") || "No email";
         const requirement = fd.get("requirement") || "No requirement";
@@ -158,9 +160,10 @@ Requirement: ${requirement}`;
 
     return (
         <div className="floating-form-overlay">
-            <div className="floating-form-box" ref={formRef}>
+            <div className="floating-form-box">
                 <h3>Share your details</h3>
-                <form>
+                {/* ✅ Attach formRef here */}
+                <form ref={formRef}>
                     <label>
                         Name <input name="name" required />
                     </label>
@@ -184,10 +187,18 @@ Requirement: ${requirement}`;
                         Your Requirement <input name="requirement" required />
                     </label>
                     <div className="btn-group">
-                        <button type="submit" className="btn whatsapp" onClick={(e) => onSubmit(e, "whatsapp")}>
+                        <button
+                            type="button"
+                            className="btn whatsapp"
+                            onClick={(e) => onSubmit(e, "whatsapp")}
+                        >
                             WhatsApp
                         </button>
-                        <button type="submit" className="btn email" onClick={(e) => onSubmit(e, "email")}>
+                        <button
+                            type="button"
+                            className="btn email"
+                            onClick={(e) => onSubmit(e, "email")}
+                        >
                             Email
                         </button>
                     </div>

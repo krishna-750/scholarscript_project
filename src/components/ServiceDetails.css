@@ -1,0 +1,38 @@
+.service-details {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.service-details h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #114b3b;
+}
+
+.service-details .content {
+    white-space: pre-wrap;
+    /* keeps line breaks */
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #444;
+    margin-bottom: 2rem;
+}
+
+.back-link {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    background: #114b3b;
+    color: #fff;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.back-link:hover {
+    background: #0d3a2e;
+}

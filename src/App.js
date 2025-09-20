@@ -47,6 +47,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import WhatsAppButton from "./components/WhatsAppButton";
 import FloatingContactForm from "./components/FloatingContactForm";
+import ServiceDetails from "./components/ServiceDetails";
 
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -70,6 +71,7 @@ export default function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/services" element={<Services />} /> {/* <-- Services route */}
+          <Route path="/services/:serviceId" element={<ServiceDetails />} />
         </Routes>
       </main>
 
