@@ -1,122 +1,113 @@
-/* Container - move to bottom-left */
-.floating-form {
+/* Fullscreen overlay */
+.floating-form-overlay {
     position: fixed;
-    bottom: 20px;
-    left: 20px;
-    /* changed from right to left */
-    z-index: 10000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
     display: flex;
-    flex-direction: column-reverse;
-    align-items: flex-start;
-    /* align left now */
-    font-family: Arial, sans-serif;
+    justify-content: center;
+    align-items: center;
+    z-index: 3000;
 }
 
-/* Toggle Button */
-.toggle-btn {
-    background: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 50%;
-    width: 55px;
-    height: 55px;
-    font-size: 22px;
-    cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
-    position: relative;
-    z-index: 10001;
-}
-
-.toggle-btn:hover {
-    transform: scale(1.1);
-}
-
-/* Form Box */
-.form-box {
+/* Form box */
+.floating-form-box {
+    width: 400px;
+    max-width: 90%;
     background: #fff;
     border-radius: 12px;
     padding: 20px;
-    width: 300px;
-    margin-bottom: 10px;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
-    overflow: hidden;
-    transition: all 0.4s ease;
+    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.15);
+    animation: fadeIn 0.3s ease;
 }
 
-/* Slide Animations */
-.slide-up {
-    transform: translateY(0);
-    opacity: 1;
-}
-
-.slide-down {
-    transform: translateY(20px);
-    opacity: 0;
-}
-
-/* Heading */
-.form-box h3 {
-    margin-bottom: 15px;
+.floating-form-box h3 {
     text-align: center;
-    color: #333;
+    margin-bottom: 16px;
+    color: #0f172a;
 }
 
-/* Inputs */
-.form-box label {
-    display: flex;
-    flex-direction: column;
+.floating-form-box label {
+    display: block;
     margin-bottom: 10px;
-    font-weight: 500;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #334155;
 }
 
-.form-box input {
-    padding: 8px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    outline: none;
+.floating-form-box input {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #e6e9ee;
+    margin-top: 4px;
 }
 
-.form-box input:focus {
-    border-color: #007bff;
+.phone-input {
+    display: flex;
+    gap: 8px;
 }
 
-/* Buttons */
+.phone-input select {
+    flex: 0 0 120px;
+}
+
+.phone-input input {
+    flex: 1;
+}
+
 .btn-group {
     display: flex;
-    justify-content: space-between;
-    gap: 10px;
+    gap: 8px;
+    margin-top: 12px;
 }
 
 .btn {
     flex: 1;
-    padding: 8px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
+    padding: 10px;
+    border-radius: 8px;
     color: #fff;
-    font-weight: bold;
+    border: none;
+    font-weight: 700;
+    cursor: pointer;
 }
 
 .btn.whatsapp {
     background: #25d366;
 }
 
-.btn.whatsapp:hover {
-    background: #1ebe5c;
-}
-
 .btn.email {
-    background: #007bff;
+    background: #0b93ff;
 }
 
-.btn.email:hover {
-    background: #0056b3;
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-/* Optional: ensure WhatsApp icon floating on bottom-right doesn't collide */
-.floating-whatsapp {
-    right: 20px !important;
-    bottom: 20px !important;
-    left: auto !important;
+/* Responsive */
+@media (max-width: 992px) {
+    .phone-input {
+        flex-direction: column;
+    }
+
+    .phone-input select,
+    .phone-input input {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .floating-form-box {
+        padding: 16px;
+    }
 }

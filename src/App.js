@@ -1,37 +1,81 @@
-import React from "react";
+
+// import React, { useEffect } from "react";
+// import { Routes, Route } from "react-router-dom";
+// import AOS from "aos";
+
+// import Navbar from "./components/Navbar";
+// import Footer from "./components/Footer";
+// import WhatsAppButton from "./components/WhatsAppButton";
+// import FloatingContactForm from "./components/FloatingContactForm";
+
+// import Home from "./pages/Home";
+// import About from "./pages/About";
+// import Contact from "./pages/Contact";
+// import Blog from "./pages/Blog";
+
+// export default function App() {
+//   useEffect(() => {
+//     AOS.init({ duration: 700, once: true, offset: 60 });
+//     AOS.refresh();
+//   }, []);
+
+//   return (
+//     <>
+//       <Navbar />
+//       <main>
+//         <Routes>
+//           <Route path="/" element={<Home />} />
+//           <Route path="/about" element={<About />} />
+//           <Route path="/contact" element={<Contact />} />
+//           <Route path="/blog" element={<Blog />} />
+//         </Routes>
+//       </main>
+
+//       <Footer />
+//       <WhatsAppButton />
+//       <FloatingContactForm />
+//     </>
+//   );
+// }
+
+
+import React, { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
+import AOS from "aos";
+
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import WhatsAppButton from "./components/WhatsAppButton";
+import FloatingContactForm from "./components/FloatingContactForm";
 
 import Home from "./pages/Home";
-import Services from "./pages/Services";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
-import Testimonials from "./pages/Testimonials";
 import Blog from "./pages/Blog";
-import FloatingContactForm from './components/FloatingContactForm';
-
+import Services from "./components/Services"; // <-- import Services page
 
 export default function App() {
+  useEffect(() => {
+    AOS.init({ duration: 700, once: true, offset: 60 });
+    AOS.refresh();
+  }, []);
+
   return (
     <>
       <Navbar />
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/services" element={<Services />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/testimonials" element={<Testimonials />} />
           <Route path="/blog" element={<Blog />} />
-          <Route path="*" element={<Home />} />
-
+          <Route path="/services" element={<Services />} /> {/* <-- Services route */}
         </Routes>
       </main>
-      <FloatingContactForm />
+
       <Footer />
       <WhatsAppButton />
+      <FloatingContactForm />
     </>
   );
 }

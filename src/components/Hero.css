@@ -1,0 +1,171 @@
+/* src/components/Hero.css */
+
+.hero {
+    /* Use a direct image URL or local image (e.g., ./assets/hero-bg.jpg) */
+    background-image: url("https://img.freepik.com/free-photo/medium-shot-man-working-late-night-laptop_23-2150280979.jpg?semt=ais_incoming&w=740&q=80");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    padding: 90px 20px;
+    position: relative;
+    overflow: hidden;
+    color: #ffffff;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(7, 33, 38, 0.55);
+    /* dark overlay for readability */
+    z-index: 0;
+}
+
+.hero-inner {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+/* Left Side */
+.hero-left {
+    flex: 1;
+    min-width: 300px;
+}
+
+.hero-left h1 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.3;
+}
+
+.hero-left h1 span {
+    color: #1ed690;
+    /* highlight */
+}
+
+.hero-left .lead {
+    margin: 20px 0;
+    font-size: 1.2rem;
+    color: #f0f0f0;
+    max-width: 500px;
+}
+
+.hero-cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.btn {
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+/* Buttons */
+.primary-btn {
+    background: #1ed690;
+    color: #072126;
+    border: none;
+}
+
+.primary-btn:hover {
+    background: #17a871;
+    color: #ffffff;
+}
+
+.outline-btn {
+    border: 2px solid #1ed690;
+    color: #1ed690;
+    background: transparent;
+}
+
+.outline-btn:hover {
+    background: #1ed690;
+    color: #072126;
+}
+
+/* Right Side */
+.hero-right {
+    flex: 1;
+    min-width: 280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-card {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    position: relative;
+    max-width: 280px;
+}
+
+.hero-card .badge {
+    background: #1ed690;
+    color: #072126;
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 8px 16px;
+    border-radius: 30px;
+    position: absolute;
+    top: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.hero-img {
+    width: 150px;
+    height: auto;
+    margin-top: 25px;
+}
+
+/* Responsive (Mobile First) */
+@media (max-width: 768px) {
+    .hero-inner {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-left h1 {
+        font-size: 2rem;
+    }
+
+    .hero-left .lead {
+        margin: 15px auto;
+        font-size: 1rem;
+    }
+
+    .hero-cta {
+        justify-content: center;
+    }
+
+    .hero-right {
+        margin-top: 30px;
+    }
+
+    .hero-card {
+        max-width: 240px;
+        padding: 25px;
+    }
+
+    .hero-img {
+        width: 120px;
+    }
+}

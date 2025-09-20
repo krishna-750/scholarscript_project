@@ -1,0 +1,26 @@
+/* src/components/Logo.css */
+.site-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-icon {
+    font-size: 2rem;
+    color: #1eb77c;
+    /* fresh green */
+}
+
+.logo-text .company-name {
+    font-weight: 700;
+    font-family: "Merriweather", serif;
+    font-size: 1.2rem;
+    color: #072126;
+}
+
+.logo-text .slogan {
+    font-size: 0.8rem;
+    color: #1eb77c;
+    margin-top: 2px;
+    font-style: italic;
+}
